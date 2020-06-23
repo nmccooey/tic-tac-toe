@@ -1,0 +1,12 @@
+#game-header {
+    border: dotted blue 2px;
+    display: flex;
+    justify-content: center;
+}
+
+#game-title {
+    border: solid red 2px;
+    font-size: 50px;
+    margin: 10px 0px 10px 0px;
+    font-family: 'Seymour One', sans-serif;;
+}
