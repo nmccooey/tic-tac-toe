@@ -5,15 +5,41 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Tic Tac Toe</title>
         <link href="./stylesheets/styles.css" type="text/css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Seymour+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
-        <header id="game-header">
-            <h1 id="game-title">Tic Tac Toe</h1>
+        <header class="game-header">
+            <h1 class="game-title">Tic-Tac-Toe</h1>
         </header>
-        <main>
 
+        <main class="main-container">
+            <div class="grid-container">
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div id="intro-container">
+                    <form class="game-form">
+                        <label for="player_one">Player One Name:</label><br>
+                        <input type="text" id="fname" name="fname"><br>
+                        <label for="player_two">Player Two Name:</label><br>
+                        <input type="text" id="lname" name="lname"><br><br>
+                        <button type="button" id="start-game-button" value="Submit">Start Game</button>
+                    </form>
+                </div>
+            </div>
         </main>
-        <script type="text/javascript" src="./scripts/game.js"></script>
     </body>
+    <script type="text/javascript" src="./scripts/game.js"></script>
 </html>
+<!--
+<div id="human-score-display" class="score-display">Score: 0</div>
+<div id="computer-score-display" class="score-display">Score: 0</div>
+<button id="new-game-button">New Game</button>
+-->
