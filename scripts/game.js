@@ -1,6 +1,14 @@
-jQuery(document).ready(function(){
-    console.log("hellow")
-    jQuery("#start-game-button").click(function(){
-        jQuery("#intro-container").fadeToggle(1500);
-    });
-});
+const newGameButton = document.querySelector(".new-game");
+newGameButton.addEventListener("click", startGame);
+
+function startGame(){
+    newGameButton.disabled = true;
+
+    //Create board.
+    const gameContainer = document.querySelector(".game-container");
+    for (let i = 0; i < 9; i++) {
+        const gameSpot = document.createElement("div");
+        gameSpot.className = "game-spot";
+        gameContainer.appendChild(gameSpot);
+    }
+}
