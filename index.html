@@ -5,24 +5,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Tic Tac Toe</title>
         <link rel="stylesheet" href="./stylesheets/styles.css" type="text/css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Fredoka+One&display=swap">    
     </head>
     <body>
-        <header class="game-header">
-            <h1 class="game-title">Tic-Tac-Toe</h1>
-        </header>
-        <main class="main-container">
-            <div class="game-container">
-            </div>
-            <div class="button-container">
-                <button class="new-game button">New Game</button>
-                <button class="night-mode button">Night Mode</button>
-            </div>
-        </main>
-        <footer class="footer">
-            <p>Created by: Nicholas McCooey &copy2020</p>
-            <p>GitHub: <a href="https://github.com/nmccooey" target="_blank">nmccooey</a></p>
-        </footer>
+        <div class="flex-container">
+            <header>
+                <h1>Tic - Tac - Toe</h1>
+            </header>
+            <main>
+                <div class="board-container">
+                    <div class="grid"></div>
+                    <div class="overlay">
+                        <p>Tic-Tac-Toe is a simple game in which 2 players alternate diferent markings in a 3x3 grid. The first to complete either a full straight line (row or column) or a diagonal with its markings, wins!</p>
+                        <button>Player vs Player</button>
+                        <button>Player vs Computer</button>
+                    </div>
+                </div>
+            </main>
+        </div>
     </body>
     <script type="text/javascript" src="./scripts/game.js"></script>
 </html>

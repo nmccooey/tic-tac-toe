@@ -1,124 +1,104 @@
 body {
-    font-family: 'Gloria Hallelujah', cursive;
-    background-image: url(/images/natural_paper.png);
+    font-family: 'Bungee Inline', cursive;
     margin: 0px;
     padding: 0px;
+    height: 100%;
+    background-color: rgb(79, 25, 95);
 }
 
-.game-header {
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+header {
     display: flex;
     justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    width: 100%;
+    background-color: white;
 }
 
-.game-title {
-    font-size: 3em;
-    margin-top: 0px;
-    margin-bottom: 10px;
-    font-family: 'Gloria Hallelujah', cursive;
-    text-transform: uppercase;
+header h1 {
+    margin: 0px;
+    padding: 0px;
+    margin: 10px 0px 10px 0px;
 }
 
-.main-container {
+.board-container {
+    width: 560px;
+    height: 560px;
+    border: solid white 4px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(79, 25, 95);
+    margin-top: 15px;
+}
+
+.grid {
+    width: 510px;
+    height: 510px;
+    display: grid;
+    gap: 5px;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    background-color: white;
+}
+
+.overlay {
+    position: absolute;
+    z-index: 1;
+    background-color: rgb(79, 25, 95);
+    border-radius: 10px;
+    width: 510px;
+    height: 510px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
 }
 
-.game-container {
-    width: 420px;
-    height: 420px;
-    margin: 0 auto;
-    display: grid;  
-    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
-    border-radius: 20px;
-    background-image: url(/images/chalkboard-background.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    box-shadow: 8px 8px 8px #333333;
-    border: solid saddlebrown 4px;
-    padding: 10px;
+.overlay button {
+    width: 250px;
+    height: 50px;
+    border-radius: 10px;
+    border: white solid 2px;
+    background-color: Transparent;
+    color: white;
+    font-size: 18px;
+    margin: 10px;
+    font-weight: bold;
+    outline: none;
+    text-transform: uppercase;
+}
+
+.overlay button:hover {
+    background-color: white;
+    color: rgb(79, 25, 95);
+    cursor: pointer;
+}
+
+.overlay button:focus {
+    background-color: white;
+    color: rgb(79, 25, 95);
 }
 
 .game-spot {
     cursor: pointer;
-    border-radius: 2px;
-    border-radius: 10px;
+    background-color: rgb(79, 25, 95);
+    color: white;
+    font-size: 4.5em;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 4em;
-    color: whitesmoke;
-    border: whitesmoke solid 2px;
-}
-
-.game-spot:hover {
-    border: 4px dotted darkblue;
-    border-radius: 10px;
-}
-
-.button-container {
-    display: flex;
-    margin-top: 20px;
-}
-
-.button {
-    width: 150px;
-    height: 50px;
-    font-size: 20px;
-    text-transform: uppercase;
-    font-family: 'Gloria Hallelujah', cursive;
-    font-weight: bold;
-    border-radius: 20px;
-    border: none;
-    background: url("../images/wood_pattern.png");
-    cursor: pointer;
-    box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0.2), 
-    inset 0px -5px 0px 0px rgba(0,0,0,0.3), 
-    inset 0px 2px 0px 0px rgba(255,255,255,0.5);
-    opacity: 0.8;
-    margin: 5px 20px 5px 20px;
-}
-
-.button:hover {
-    opacity: 1.0;
-}
-
-.button:active {
-    box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0.2),
-    inset 0px -2px 0px 0px rgba(0,0,0,0.3),
-    inset 0px 2px 0px 0px rgba(255,255,255,0.5);
-    top: 3px;
-    padding-top: 9px;
-}
-
-.button:focus {
-    outline: none;
-    border: solid black 1px;
-    opacity: 1.0; 
-}
-
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: gray;
-    color: white;
-    text-align: center;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.footer p {
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    margin: 5px 0px 5px 0px;
-}
-
-.footer p a {
-    text-decoration: none;
-    color: darkblue;
+    font-family: 'Fredoka One', cursive;
 }
