@@ -1,30 +1,27 @@
-
 let board = [];
+let currentPlay = null;
+
+const playerVSPlayerButton = document.getElementById("pvp-button");
+
+playerVSPlayerButton.addEventListener("click", playVSPlayer);
 
 function menuSetup() {
-    const playerVSPlayerButton = document.querySelector("#pvp-button");
-    const playerVSComputerButton = document.querySelector("#pvc-button");
     
     // Overlay is visble.
     document.querySelector(".overlay").style.display = "flex";
     board = ["","","","","","","","",""];
+}
 
-    playerVSPlayerButton.addEventListener('click', playerVSPlayer, {capture: true, once: true});
-    playerVSComputerButton.addEventListener('click', playerVSComputer, {capture: true, once: true});
+function playVSPlayer() {
+        
+    // Clear text in any children divs that are currently in the grid.
+    document.querySelectorAll('.game-spot').forEach(gameSpot => {
+        gameSpot.innerHTML = "";
+    });
 
-    function playerVSPlayer() {
-        // Clear text in any children divs that are currently in the grid.
-        document.querySelectorAll('.game-spot').forEach(gameSpot => {
-            gameSpot.innerHTML = "";
-        });
+    document.querySelector(".overlay").style.display = "none";
     
-        document.querySelector(".overlay").style.display = "none";
-        startGame();
-    }
-
-    function playerVSComputer() {
-        alert("In Progess");
-    }
+    startGame();
 }
 
 // Only called 1 time - when the page is loaded.
@@ -40,35 +37,41 @@ function createBoard() {
 }
 
 function startGame() {
-    let currentPlay = "X";
+    currentPlay = "X";
 
     document.querySelectorAll('.game-spot').forEach(gameSpot => {
         gameSpot.addEventListener('click', event => {
             if (gameSpot.innerHTML == "") {
                 gameSpot.innerHTML = currentPlay;
                 board[gameSpot.getAttribute("data-index")] = currentPlay;
-                let winner = winTest(board, currentPlay);
-                if (winner == "X" || winner == "O") {
-                    setTimeout(function() {
-                        alert(`The winner is ${winner}`);
-                        menuSetup();
-                    }, 2)
-                } else if (winner == "tie") {
-                    setTimeout(function() {
-                        alert(`It's a Tie!`);
-                        menuSetup();
-                    }, 2)
-                }
-            }
-
-            // Change player.
-            if (currentPlay === "X") {
-                currentPlay = "O";
-            } else {
-                currentPlay = "X";
+                checkWinner(board, currentPlay);
+                changePlayer();
             }
         });
     });
+}
+
+function changePlayer() {
+    if (currentPlay === "X") {
+        currentPlay = "O";
+    } else {
+        currentPlay = "X";
+    }
+}
+
+function checkWinner(board, currentPlay) {
+    let winner = winTest(board, currentPlay);
+    if (winner == "X" || winner == "O") {
+        setTimeout(function() {
+            alert(`The winner is ${winner}`);
+            menuSetup();
+        }, 2)
+    } else if (winner == "tie") {
+        setTimeout(function() {
+            alert(`It's a Tie!`);
+            menuSetup();
+        }, 2)
+    }
 }
 
 function winTest(board, side) {
