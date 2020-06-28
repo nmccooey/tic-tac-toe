@@ -48,11 +48,16 @@ function startGame() {
                 gameSpot.innerHTML = currentPlay;
                 board[gameSpot.getAttribute("data-index")] = currentPlay;
                 let winner = winTest(board, currentPlay);
-                if (winner != false) {
+                if (winner == "X" || winner == "O") {
                     setTimeout(function() {
                         alert(`The winner is ${winner}`);
                         menuSetup();
-                    }, 1.5)
+                    }, 2)
+                } else if (winner == "tie") {
+                    setTimeout(function() {
+                        alert(`It's a Tie!`);
+                        menuSetup();
+                    }, 2)
                 }
             }
 
@@ -83,7 +88,6 @@ function winTest(board, side) {
         let w = winConditions[i];
         
         for(let b = 0; b < w.length; b++) {
-            console.log();
             if(board[w[b]] === side) {
                 sum++
             }
@@ -92,6 +96,18 @@ function winTest(board, side) {
         if(sum === 3) {
             return side;
         }
+
+        // check tie:
+        let spotsTaken = 0;
+        for(let i = 0; i < board.length; i++) {
+            if(board[i] !== "") {
+                spotsTaken++;
+            }
+        }
+
+        if (spotsTaken == 9) {
+            return "tie";
+        } 
     }
 
     return false;
