@@ -3,7 +3,7 @@ body {
     margin: 0px;
     padding: 0px;
     height: 100%;
-    background-color: rgb(79, 25, 95);
+    background-color: rgb(32, 25, 95);
 }
 
 .flex-container {
@@ -36,7 +36,7 @@ header h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(79, 25, 95);
+    background-color: rgb(32, 25, 95);
     margin-top: 15px;
 }
 
@@ -52,7 +52,7 @@ header h1 {
 .overlay {
     position: absolute;
     z-index: 1;
-    background-color: rgb(79, 25, 95);
+    background-color: rgb(32, 25, 95);
     border-radius: 10px;
     width: 510px;
     height: 510px;
@@ -83,18 +83,18 @@ header h1 {
 
 .overlay button:hover {
     background-color: white;
-    color: rgb(79, 25, 95);
+    color: rgb(32, 25, 95);
     cursor: pointer;
 }
 
 .overlay button:focus {
     background-color: white;
-    color: rgb(79, 25, 95);
+    color: rgb(32, 25, 95);
 }
 
 .game-spot {
     cursor: pointer;
-    background-color: rgb(79, 25, 95);
+    background-color: rgb(32, 25, 95);
     color: white;
     font-size: 4.5em;
     display: flex;
